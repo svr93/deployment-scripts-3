@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+currentDir=$(pwd)
+
 # default project name
 projectName='__project'
 
@@ -25,3 +27,9 @@ mkdir ${projectDir}'/client'
 
 srcDir=${projectDir}'/client/src'
 mkdir ${srcDir}
+
+cd ${projectDir}
+npm init
+
+
+cd ${currentDir}

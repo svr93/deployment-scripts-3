@@ -20,3 +20,8 @@ projectDir='../'${projectName}
 mkdir ${projectDir}
 
 cp example-.gitignore ${projectDir}'/.gitignore'
+
+mkdir ${projectDir}'/client'
+
+srcDir=${projectDir}'/client/src'
+mkdir ${srcDir}

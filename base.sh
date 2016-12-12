@@ -26,6 +26,7 @@ cp example-karma.conf.js ${projectDir}'/karma.conf.js'
 cp -r example-test-client ${projectDir}'/test-client'
 cp example-.babelrc ${projectDir}'/.babelrc'
 cp example-.eslintrc ${projectDir}'/.eslintrc'
+cp example-gulpfile.js ${projectDir}'/gulpfile.js'
 
 mkdir ${projectDir}'/client'
 
@@ -87,5 +88,12 @@ npm i --save-dev eslint
 npm i --save-dev eslint-plugin-requirejs
 git add .eslintrc
 git commit -a -m 'add Eslint support'
+
+npm i --save-dev gulp
+npm i --save-dev gulp-connect
+npm i --save-dev gulp-if
+npm i --save-dev yargs
+git add gulpfile.js
+git commit -a -m 'add Gulp support'
 
 cd ${currentDir}

@@ -107,4 +107,22 @@ bower init
 git add bower.json
 git commit -a -m 'initialize bower'
 
+bower i --save-dev requirejs
+bower i --save almond
+
+bower i --save angular#1.5.9
+bower i --save angular-mocks#1.5.9
+typings i --save --global dt~angular
+bower i --save angular-ui-router
+bower i --save ui-router-extras
+typings i --save --global dt~angular-ui-router
+bower i --save bluebird
+typings i --save --global dt~bluebird
+
+bower i --save require-css
+bower i --save text
+bower i --save selector-alias
+
+git commit -a -m 'add js libraries & typings'
+
 cd ${currentDir}

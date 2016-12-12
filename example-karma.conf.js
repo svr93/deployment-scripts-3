@@ -14,6 +14,18 @@ module.exports = function(config) {
 
     const vendorPathArr = [
 
+        'vendor/bluebird/js/browser/bluebird.min',
+
+        'vendor/angular/angular.min',
+        'vendor/angular-ui-router/release/angular-ui-router.min',
+        'vendor/ui-router-extras/release/ct-ui-router-extras.min',
+
+        'vendor/text/text',
+        'vendor/require-css/css',
+
+        'vendor/selector-alias/selector-alias',
+
+        'vendor/angular-mocks/angular-mocks',
         ]
         .map((item) => {
 
@@ -28,7 +40,7 @@ module.exports = function(config) {
                  * True for all non-AMD libs.
                  * @param {boolean}
                  */
-                included: false,
+                included: item.includes('vendor/angular')
             };
         });
     const optionObj = {
@@ -53,7 +65,6 @@ module.exports = function(config) {
                 included: true,
             },
 
-            { pattern: 'client/src/requirejs-config.js', included: true },
             { pattern: 'client/src/global/web-api.js', included: false },
             { pattern: 'test-client/jasmine-env.js', included: false },
         ],

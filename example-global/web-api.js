@@ -7,8 +7,11 @@
 
 define([
 
-], function() {
+    'bluebird',
+], function(Promise) {
     "use strict";
+
+    window.Promise = Promise
 
     // ES6 module system should help us avoid yet more
     // such global namespace-object additions.

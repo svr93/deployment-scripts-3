@@ -96,4 +96,7 @@ npm i --save-dev yargs
 git add gulpfile.js
 git commit -a -m 'add Gulp support'
 
+npm i --save-dev gulp-babel
+git commit -a -m 'process JS in gulpfile.js'
+
 cd ${currentDir}

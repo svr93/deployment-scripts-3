@@ -57,6 +57,10 @@ module.exports = function(config) {
             { pattern: 'client/src/global/web-api.js', included: false },
             { pattern: 'test-client/jasmine-env.js', included: false },
         ],
+        preprocessors: {
+
+            'client/src/**/*.js': [ 'babel' ],
+        },
     };
     const baseFileArr = optionObj.files;
     optionObj.files = vendorPathArr.concat(baseFileArr, [

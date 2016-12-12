@@ -24,6 +24,7 @@ mkdir ${projectDir}
 cp example-.gitignore ${projectDir}'/.gitignore'
 cp example-karma.conf.js ${projectDir}'/karma.conf.js'
 cp -r example-test-client ${projectDir}'/test-client'
+cp example-.babelrc ${projectDir}'/.babelrc'
 
 mkdir ${projectDir}'/client'
 
@@ -74,5 +75,11 @@ touch .flowconfig
 
 git add .flowconfig
 git commit -a -m 'add Flow support'
+
+npm i --save-dev karma-babel-preprocessor
+npm i --save-dev babel-plugin-transform-es2015-arrow-functions
+npm i --save-dev babel-plugin-transform-es2015-block-scoping
+git add .babelrc
+git commit -a -m 'add Babel support'
 
 cd ${currentDir}

@@ -103,4 +103,8 @@ git commit -a -m 'process JS in gulpfile.js'
 git add .bowerrc
 git commit -a -m 'add .bowerrc & update .gitignore'
 
+bower init
+git add bower.json
+git commit -a -m 'initialize bower'
+
 cd ${currentDir}

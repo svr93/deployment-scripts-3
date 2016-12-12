@@ -69,4 +69,10 @@ git add package.json
 git add typings.json
 git commit -a -m 'add test frameworks'
 
+npm i --save-dev flow-bin # for WS 2016.3
+touch .flowconfig
+
+git add .flowconfig
+git commit -a -m 'add Flow support'
+
 cd ${currentDir}

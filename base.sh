@@ -27,6 +27,7 @@ cp -r example-test-client ${projectDir}'/test-client'
 cp example-.babelrc ${projectDir}'/.babelrc'
 cp example-.eslintrc ${projectDir}'/.eslintrc'
 cp example-gulpfile.js ${projectDir}'/gulpfile.js'
+cp example-.bowerrc ${projectDir}'/.bowerrc'
 
 mkdir ${projectDir}'/client'
 
@@ -98,5 +99,8 @@ git commit -a -m 'add Gulp support'
 
 npm i --save-dev gulp-babel
 git commit -a -m 'process JS in gulpfile.js'
+
+git add .bowerrc
+git commit -a -m 'add .bowerrc & update .gitignore'
 
 cd ${currentDir}

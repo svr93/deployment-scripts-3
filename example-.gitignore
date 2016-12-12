@@ -2,3 +2,5 @@
 
 /node_modules
 /typings
+
+/client/src/vendor

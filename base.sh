@@ -25,6 +25,7 @@ cp example-.gitignore ${projectDir}'/.gitignore'
 cp example-karma.conf.js ${projectDir}'/karma.conf.js'
 cp -r example-test-client ${projectDir}'/test-client'
 cp example-.babelrc ${projectDir}'/.babelrc'
+cp example-.eslintrc ${projectDir}'/.eslintrc'
 
 mkdir ${projectDir}'/client'
 
@@ -81,5 +82,10 @@ npm i --save-dev babel-plugin-transform-es2015-arrow-functions
 npm i --save-dev babel-plugin-transform-es2015-block-scoping
 git add .babelrc
 git commit -a -m 'add Babel support'
+
+npm i --save-dev eslint
+npm i --save-dev eslint-plugin-requirejs
+git add .eslintrc
+git commit -a -m 'add Eslint support'
 
 cd ${currentDir}

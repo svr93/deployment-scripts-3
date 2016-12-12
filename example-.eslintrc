@@ -1,0 +1,24 @@
+{
+  "extends": [ "eslint:recommended", "plugin:requirejs/recommended" ],
+  "rules": {
+    "comma-dangle": [ "error", "always-multiline" ],
+    "no-restricted-globals": [ "error", "JSON", "Math" ],
+
+    "requirejs/no-object-define": "error",
+    "requirejs/no-named-define": "error",
+    "requirejs/amd-function-arity": "error"
+  },
+  "parserOptions": {
+    "ecmaVersion": 7
+  },
+  "globals": {
+    "require": false,
+    "module": false,
+    "requirejs": false,
+    "Promise": false,
+
+    "Map": false,
+    "Set": false
+  },
+  "plugins": [ "requirejs" ]
+}

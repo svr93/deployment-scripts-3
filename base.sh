@@ -31,6 +31,8 @@ cp example-.bowerrc ${projectDir}'/.bowerrc'
 
 mkdir ${projectDir}'/client'
 
+cp example-index.html ${projectDir}'/client/index.html'
+
 srcDir=${projectDir}'/client/src'
 mkdir ${srcDir}
 cp -r example-global ${srcDir}'/global'
@@ -124,5 +126,8 @@ bower i --save text
 bower i --save selector-alias
 
 git commit -a -m 'add js libraries & typings'
+
+git add 'client/index.html'
+git commit -a -m 'add index.html'
 
 cd ${currentDir}

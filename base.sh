@@ -36,7 +36,9 @@ cp example-index.html ${projectDir}'/client/index.html'
 srcDir=${projectDir}'/client/src'
 mkdir ${srcDir}
 cp -r example-global ${srcDir}'/global'
+cp -r example-app ${srcDir}'/app'
 cp -r example-requirejs-config.js ${srcDir}'/requirejs-config.js'
+cp -r example-main.js ${srcDir}'/main.js'
 
 cd ${projectDir}
 git init
@@ -68,7 +70,8 @@ typings i --save --global dt~jasmine
 typings i --save --global dt~require
 
 git add .gitignore
-git add client/src/*
+git add client/src/global/*
+git add client/src/requirejs-config.js
 git add test-client/*
 git add karma.conf.js
 git add package.json
@@ -129,5 +132,9 @@ git commit -a -m 'add js libraries & typings'
 
 git add 'client/index.html'
 git commit -a -m 'add index.html'
+
+git add 'client/src/app/util/selector.js'
+git add 'client/src/main.js'
+git commit -a -m 'add RequireJS base config, wrappers; fix index.html paths'
 
 cd ${currentDir}

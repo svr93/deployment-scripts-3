@@ -66,6 +66,7 @@ module.exports = function(config) {
             },
 
             { pattern: 'client/src/global/web-api.js', included: false },
+            { pattern: 'client/src/app/util/selector.js', included: false },
             { pattern: 'test-client/jasmine-env.js', included: false },
         ],
         preprocessors: {

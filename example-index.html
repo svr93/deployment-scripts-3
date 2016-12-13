@@ -3,10 +3,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy"
-          content="connect-src 'self' ws://localhost:* script-src 'self' http://localhost:*">
+          content="connect-src 'self' ws://localhost:*; script-src 'self' http://localhost:*">
 
-    <script src="requirejs-config.js"></script>
-    <script data-main="main" src="vendor/requirejs/require.js"></script>
+    <script src="src/requirejs-config.js"></script>
+    <script data-main="src/main" src="src/vendor/requirejs/require.js"></script>
 </head>
 <body ng-csp="no-unsafe-eval">
 <app></app>

@@ -14,7 +14,9 @@ const connect = require('gulp-connect')
 /* JS processing module list */
 const babel = require('gulp-babel')
 
+const CLIENT_HTML_PATH = path.join(__dirname, 'client/**/*.html');
 const CLIENT_JS_PATH = `${ __dirname }/client/src`
+
 const SERVER_REL_STATIC_PATH = 'server/www'
 const SERVER_REL_JS_PATH = `${ SERVER_REL_STATIC_PATH }/src`
 
@@ -23,6 +25,7 @@ const STATIC_PORT = 8010
 
 gulp.task('watch', () => {
 
+    gulp.watch(CLIENT_HTML_PATH, [ 'html' ])
     gulp.watch(path.join(CLIENT_JS_PATH, '**/*.js')).on('change', (evt) => {
 
         console.log(`${ evt.type }: ${ evt.path }`)
@@ -34,6 +37,13 @@ gulp.task('watch', () => {
         livereload: true,
         port: STATIC_PORT,
     })
+})
+
+gulp.task('html', () => {
+
+    return gulp.src(CLIENT_HTML_PATH)
+        .pipe(gulp.dest(SERVER_REL_STATIC_PATH))
+        .pipe(gulpif(WATCH, connect.reload()))
 })
 
 gulp.task('js', () => processJS(`${ CLIENT_JS_PATH }/**/*.js`))
@@ -60,6 +70,6 @@ function processJS(src) {
         .pipe(gulpif(WATCH, connect.reload()))
 }
 
-gulp.task('default', [ 'js' ], () => {
+gulp.task('default', [ 'html', 'js' ], () => {
 
 })

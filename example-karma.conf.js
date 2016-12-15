@@ -71,6 +71,7 @@ module.exports = function(config) {
         ],
         preprocessors: {
 
+            'client/src/**/*.сss': [ 'postcss' ],
             'client/src/**/*.js': [ 'babel' ],
         },
     };

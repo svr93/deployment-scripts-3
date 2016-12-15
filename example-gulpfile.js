@@ -11,9 +11,14 @@ const gulp = require('gulp')
 const gulpif = require('gulp-if')
 const connect = require('gulp-connect')
 
+/* CSS processing module list */
+const postcss = require('gulp-postcss')
+const cssvariables = require('postcss-css-variables')
+
 /* JS processing module list */
 const babel = require('gulp-babel')
 
+const CLIENT_CSS_PATH = path.join(__dirname, 'client/**/*.css')
 const CLIENT_HTML_PATH = path.join(__dirname, 'client/**/*.html');
 const CLIENT_JS_PATH = `${ __dirname }/client/src`
 
@@ -37,6 +42,18 @@ gulp.task('watch', () => {
         livereload: true,
         port: STATIC_PORT,
     })
+})
+
+gulp.task('css', () => {
+
+    return gulp.src(CLIENT_CSS_PATH)
+        .pipe(postcss([
+
+            cssvariables(),
+        ]))
+        .on('error', (err) => console.error(err.message))
+        .pipe(gulp.dest(SERVER_REL_STATIC_PATH))
+        .pipe(gulpif(WATCH, connect.reload()))
 })
 
 gulp.task('html', () => {
@@ -70,6 +87,6 @@ function processJS(src) {
         .pipe(gulpif(WATCH, connect.reload()))
 }
 
-gulp.task('default', [ 'html', 'js' ], () => {
+gulp.task('default', [ 'css', 'html', 'js' ], () => {
 
 })

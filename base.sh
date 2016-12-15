@@ -137,4 +137,9 @@ git add 'client/src/app/util/selector.js'
 git add 'client/src/main.js'
 git commit -a -m 'add RequireJS base config, wrappers; fix index.html paths'
 
+npm i --save-dev gulp-postcss
+npm i --save-dev postcss-css-variables
+npm i --save-dev karma-postcss-preprocessor
+git commit -a -m 'process CSS in gulpfile.js'
+
 cd ${currentDir}

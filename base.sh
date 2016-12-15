@@ -117,12 +117,12 @@ bower i --save almond
 
 bower i --save angular#1.5.9
 bower i --save angular-mocks#1.5.9
-typings i --save --global dt~angular
+typings i --save dt~angular
 bower i --save angular-ui-router
 bower i --save ui-router-extras
-typings i --save --global dt~angular-ui-router
+typings i --save dt~angular-ui-router
 bower i --save bluebird
-typings i --save --global dt~bluebird
+typings i --save dt~bluebird
 
 bower i --save require-css
 bower i --save text
